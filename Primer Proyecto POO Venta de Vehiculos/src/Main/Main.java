@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package primer.proyecto.poo.venta.de.vehiculos;
+package Main;
 
 /**
  *
  * @author Usuario
  */
-public class PrimerProyectoPOOVentaDeVehiculos {
+public class Main {
 
     /**
      * @param args the command line arguments
