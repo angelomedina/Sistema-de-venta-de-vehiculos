@@ -30,8 +30,9 @@
                   <Component id="btnUsados" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btnNew" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBack" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnOffer" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="438" max="32767" attributes="0"/>
+              <EmptySpace pref="428" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,9 +45,11 @@
               <Component id="btnUsados" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnNew" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnOffer" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="96" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,6 +82,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnOffer">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Vehiculos en oferta"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOfferActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

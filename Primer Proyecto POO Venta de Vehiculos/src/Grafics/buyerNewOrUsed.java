@@ -31,6 +31,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         btnUsados = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        btnOffer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +58,13 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
             }
         });
 
+        btnOffer.setText("Vehiculos en oferta");
+        btnOffer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOfferActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,8 +75,9 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(btnUsados)
                     .addComponent(btnNew)
-                    .addComponent(btnBack))
-                .addContainerGap(438, Short.MAX_VALUE))
+                    .addComponent(btnBack)
+                    .addComponent(btnOffer))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,9 +88,11 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
                 .addComponent(btnUsados)
                 .addGap(18, 18, 18)
                 .addComponent(btnNew)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
+                .addComponent(btnOffer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(btnBack)
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addGap(59, 59, 59))
         );
 
         pack();
@@ -101,6 +112,11 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
        Login.BN.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnNewActionPerformed
+
+    private void btnOfferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOfferActionPerformed
+        Login.BDV.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnOfferActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,6 +159,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnNew;
+    private javax.swing.JButton btnOffer;
     private javax.swing.JButton btnUsados;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

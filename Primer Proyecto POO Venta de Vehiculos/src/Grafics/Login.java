@@ -22,7 +22,7 @@ public class Login extends javax.swing.JFrame {
      public static buyerNewOrUsed BNU = new buyerNewOrUsed();
      public static buyerNew BN = new buyerNew();
      public static buyerUsed BU = new buyerUsed();
-     
+     public static buyerDiscountVehicules BDV = new buyerDiscountVehicules();
      
      public static Login main = new Login();
 
