@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package Methods;
 
+import Entities.User;
 import java.util.ArrayList;
 
 
@@ -19,10 +20,22 @@ public class UserMethods {
     public UserMethods() {
     }
     
-     public boolean verifyUser (String nombre, String pass) {
+    public boolean verifyUser(String nombre, String pass) {
         for(User i:userList){
-            if(i.getName().equals(nombre)&& i.getPass().equals(pass));
-            return true;
+            if(i.getName().equals(nombre)&& i.getPass().equals(pass))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean verifyName( String Name) {
+        for(User i:userList){
+            if( i.getName().equals(Name))
+            {
+                return true;
+            }
         }
         return false;
     }

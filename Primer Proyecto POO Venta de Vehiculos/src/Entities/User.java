@@ -12,6 +12,7 @@ import Interface.*;
  * @author Vinicio
  */
 public class User implements publicInformation {
+    private String _type;
     private String _name;
     private int _id;
     private String _email;
@@ -21,13 +22,14 @@ public class User implements publicInformation {
     private Array wishList[];
     private Array boughtCars[];
 
-    public User(String name, int id, String email, String country,String rol,String pass) {
+    public User(String name, int id, String email, String country,String rol,String pass,String type) {
         this._name = name;
         this._id = id;
         this._email = email;
         this._country = country;
         this._rol = rol;
         this._password=pass;
+        this._type=type;
     }
 
     public String getName() {
@@ -81,6 +83,16 @@ public class User implements publicInformation {
     public void setBoughtCars(Array[] boughtCars) {
         this.boughtCars = boughtCars;
     }
+
+    public String getType() {
+        return _type;
+    }
+
+    public void setType(String _type) {
+        this._type = _type;
+    }
+    
+    
     
     public void login(){};
 

@@ -17,8 +17,8 @@ public class Seler extends User {
     private Array vehiclesList[];
     
     
-    public Seler(String name, int id, String email, String country,String rol,String pass) {
-        super(name, id, email, country ,rol,pass);
+    public Seler(String name, int id, String email, String country,String rol,String pass,String type) {
+        super(name, id, email, country ,rol,pass,type);
         
         
     }
