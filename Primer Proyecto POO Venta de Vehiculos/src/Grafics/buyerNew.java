@@ -108,7 +108,7 @@ public class buyerNew extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-       //Login.BNU.setVisible(true);
+       Login.BNU.setVisible(true);
        dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 

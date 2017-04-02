@@ -16,6 +16,15 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     
      public static UserMethods userMet = new UserMethods();
+     
+
+     
+     public static buyerNewOrUsed BNU = new buyerNewOrUsed();
+     public static buyerNew BN = new buyerNew();
+     public static buyerUsed BU = new buyerUsed();
+     
+     
+     public static Login main = new Login();
 
     /**
      * Creates new form Login
