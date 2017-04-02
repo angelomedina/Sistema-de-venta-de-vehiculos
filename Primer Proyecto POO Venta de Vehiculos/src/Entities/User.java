@@ -91,6 +91,14 @@ public class User implements publicInformation {
     public void setType(String _type) {
         this._type = _type;
     }
+
+    public String getRol() {
+        return _rol;
+    }
+
+    public void setRol(String _rol) {
+        this._rol = _rol;
+    }
     
     
     
