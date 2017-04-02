@@ -30,6 +30,16 @@ public class UserMethods {
         return false;
     }
     
+     public User ReturnObjet(String nombre, String pass) {
+        for(User i:userList){
+            if(i.getName().equals(nombre)&& i.getPass().equals(pass))
+            {
+                return i;
+            }
+        }
+        return null;
+    }
+    
     public boolean verifyName( String Name) {
         for(User i:userList){
             if( i.getName().equals(Name))

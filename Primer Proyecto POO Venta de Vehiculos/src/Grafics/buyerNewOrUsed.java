@@ -34,6 +34,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         btnOffer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Comprador");
 
         jLabel1.setText("¿Que desea buscar?");
 
