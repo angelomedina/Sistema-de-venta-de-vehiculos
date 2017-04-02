@@ -5,17 +5,31 @@
  */
 package Entities;
 
+import java.util.ArrayList;
+
+
 /**
  *
  * @author Vinicio
  */
 public class UserMethods {
 
+    ArrayList<User> userList = new ArrayList<User>(); 
     
     public UserMethods() {
     }
     
-    public void registrar(){}
+     public boolean verifyUser (String nombre, String pass) {
+        for(User i:userList){
+            if(i.getName().equals(nombre)&& i.getPass().equals(pass));
+            return true;
+        }
+        return false;
+    }
+    
+    public void registrar(User user){
+        userList.add(user);
+    }
     
     public void addToWishList(int licensePlate){}
 

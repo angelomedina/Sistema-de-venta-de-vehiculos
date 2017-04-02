@@ -16,22 +16,28 @@ public class User implements publicInformation {
     private int _id;
     private String _email;
     private String _country;
+    private String _rol;
+    private String _password;
     private Array wishList[];
     private Array boughtCars[];
 
-    public User(String _name, int _id, String _email, String _country, Array[] wishList, Array[] boughtCars) {
-        this._name = _name;
-        this._id = _id;
-        this._email = _email;
-        this._country = _country;
-        this.wishList = wishList;
-        this.boughtCars = boughtCars;
+    public User(String name, int id, String email, String country,String rol,String pass) {
+        this._name = name;
+        this._id = id;
+        this._email = email;
+        this._country = country;
+        this._rol = rol;
+        this._password=pass;
     }
 
     public String getName() {
         return _name;
     }
-
+    
+     public String getPass() {
+        return _password;
+    }
+    
     public void setName(String _name) {
         this._name = _name;
     }

@@ -14,8 +14,8 @@ import java.util.Calendar;
  */
 public class Buyer extends User {
     
-    public Buyer(String _name, int _id, String _email, String _country, Array[] wishList, Array[] boughtCars) {
-        super(_name, _id, _email, _country, wishList, boughtCars);
+    public Buyer(String name, int id, String email, String country,String rol,String pass) {
+        super(name, id, email, country,rol,pass);
     }
     
     public void record(){}
