@@ -19,6 +19,8 @@ public class SellerAsAgency extends javax.swing.JFrame {
      */
     public SellerAsAgency() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
