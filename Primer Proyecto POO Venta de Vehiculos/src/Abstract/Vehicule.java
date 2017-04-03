@@ -11,7 +11,7 @@ import java.lang.reflect.Array;
  *
  * @author Vinicio
  */
-public abstract class Vehicules {
+public abstract class Vehicule {
 
     private String _type;
     private String _brand;
@@ -21,18 +21,18 @@ public abstract class Vehicules {
     private String _color;
     private String _transmition;
     private long _price;
-    private Array vehiclesList[];
+    
 
-    public Vehicules(String _type, String _brand, String _incharge, int _licensePlate, int _model, String _color, String _transmition, long _price, Array[] vehiclesList) {
-        this._type = _type;
-        this._brand = _brand;
-        this._incharge = _incharge;
-        this._licensePlate = _licensePlate;
-        this._model = _model;
-        this._color = _color;
-        this._transmition = _transmition;
-        this._price = _price;
-        this.vehiclesList = vehiclesList;
+    public Vehicule(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition, long price) {
+        this._type = type;
+        this._brand = brand;
+        this._incharge = incharge;
+        this._licensePlate = licensePlate;
+        this._model = model;
+        this._color = color;
+        this._transmition = transmition;
+        this._price = price;
+        
     }
 
     public String getType() {
@@ -99,14 +99,6 @@ public abstract class Vehicules {
         this._price = _price;
     }
 
-    public Array[] getVehiclesList() {
-        return vehiclesList;
-    }
-
-    public void setVehiclesList(Array[] vehiclesList) {
-        this.vehiclesList = vehiclesList;
-    }
-    
     
     
 }
