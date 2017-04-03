@@ -10,14 +10,15 @@ import Methods.vehiculesMethods;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Usuario
+ * @author Vinicio
  */
-public class Seller_as_Agency extends javax.swing.JFrame {
-    vehiculesMethods vehiculesMet = new vehiculesMethods();
+public class SellerAgencyAddCar extends javax.swing.JFrame {
+vehiculesMethods vehiculesMet = new vehiculesMethods();
+    
     /**
-     * Creates new form Seller_as_Agency
+     * Creates new form SellerAsAgency
      */
-    public Seller_as_Agency() {
+    public SellerAgencyAddCar() {
         initComponents();
     }
 
@@ -30,33 +31,41 @@ public class Seller_as_Agency extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtTransmition = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         txtBrand = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtPlate = new javax.swing.JTextField();
         txtPrecio = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         txtIncharge = new javax.swing.JTextField();
         btnSell = new javax.swing.JButton();
-        txtColor = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        txtPlate = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         txtType = new javax.swing.JTextField();
+        txtColor = new javax.swing.JTextField();
         txtModel = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtTransmition = new javax.swing.JTextField();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Seller as Agency");
+
+        jLabel3.setText("Marca del vehiculo:");
 
         jLabel8.setText("Precio:");
 
+        jLabel1.setText("Poner auto en venta!");
+
         jLabel4.setText("Nombre del encargado:");
 
+        jLabel2.setText("Tipo de vehiculo:");
+
         jLabel10.setText("Color:");
+
+        jLabel6.setText("Modelo:");
 
         txtIncharge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,17 +80,16 @@ public class Seller_as_Agency extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Numero de placa:");
-
-        jLabel1.setText("Poner auto en venta!");
-
-        jLabel2.setText("Tipo de vehiculo:");
-
-        jLabel6.setText("Modelo:");
-
         jLabel7.setText("Transmision:");
 
-        jLabel3.setText("Marca del vehiculo:");
+        jLabel5.setText("Numero de placa:");
+
+        btnBack.setText("Atrás");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,7 +116,8 @@ public class Seller_as_Agency extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPlate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtPlate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSell))
                         .addGap(61, 61, 61)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -117,6 +126,7 @@ public class Seller_as_Agency extends javax.swing.JFrame {
                                 .addComponent(txtColor))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnBack)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -129,8 +139,7 @@ public class Seller_as_Agency extends javax.swing.JFrame {
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(btnSell))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
@@ -173,7 +182,9 @@ public class Seller_as_Agency extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(28, 28, 28)
-                .addComponent(btnSell)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSell)
+                    .addComponent(btnBack))
                 .addContainerGap())
         );
 
@@ -191,13 +202,18 @@ public class Seller_as_Agency extends javax.swing.JFrame {
         String color = txtColor.getText();
         int plate =Integer.valueOf(txtPlate.getText());
         int model = Integer.valueOf(txtModel.getText());
-        String transmition = txtTransmition.getText();    
+        String transmition = txtTransmition.getText();
         long price = Integer.valueOf(txtPrecio.getText());
 
         Vehicule vehicule = new newVehicules(type,brand,incharge,plate,model,color,transmition,price);
         vehiculesMet.addVehicule(vehicule);
         JOptionPane.showMessageDialog(null,"Agregado a vehiculos en venta exitosamamente!");
     }//GEN-LAST:event_btnSellActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        //Login.SAA.setVisible(true);
+        //this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,25 +232,27 @@ public class Seller_as_Agency extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Seller_as_Agency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAgencyAddCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Seller_as_Agency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAgencyAddCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Seller_as_Agency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAgencyAddCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Seller_as_Agency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAgencyAddCar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Seller_as_Agency().setVisible(true);
+                new SellerAgencyAddCar().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSell;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

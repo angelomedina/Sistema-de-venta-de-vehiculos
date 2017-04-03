@@ -24,9 +24,9 @@ public class Login extends javax.swing.JFrame {
      public static buyerUsed BU = new buyerUsed();
      public static buyerDiscountVehicules BDV = new buyerDiscountVehicules();
      //sellers
-     public static Seller_as_Person SAP = new Seller_as_Person();
-     public static Seller_as_Agency SAA = new Seller_as_Agency();
-     public static Seller_as_CommercialEstablishment SAE = new Seller_as_CommercialEstablishment();
+     public static SellerAsPerson SAP = new SellerAsPerson();
+     public static SellerAsAgency SAA = new SellerAsAgency();
+     public static SellerAsCommercialEstablishment SAE = new SellerAsCommercialEstablishment();
      
      
      public static Login main = new Login();
