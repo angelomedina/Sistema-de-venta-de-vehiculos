@@ -50,6 +50,11 @@ public class SellerAsAgency extends javax.swing.JFrame {
         jButton1.setText("Agrega oferta a auto");
 
         btnBack.setText("Atrás");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,9 +90,14 @@ public class SellerAsAgency extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
-    //Login.SAAC.setVisible(true);
-    //this.dispose();
+      Login.SAAC.setVisible(true);
+      this.dispose();
     }//GEN-LAST:event_btnSellActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        Login.main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments

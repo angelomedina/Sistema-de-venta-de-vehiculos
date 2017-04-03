@@ -22,10 +22,12 @@ public class Login extends javax.swing.JFrame {
     public static buyerUsed BU = new buyerUsed();
     public static buyerDiscountVehicules BDV = new buyerDiscountVehicules();
     //sellers
-    public static Seller_as_Person SAP = new Seller_as_Person();
-    public static Seller_as_Agency SAA = new Seller_as_Agency();
-    public static Seller_as_CommercialEstablishment SAE = new Seller_as_CommercialEstablishment();
+    public static SellerAsPerson SAP = new SellerAsPerson();
+    public static SellerAsAgency SAA = new SellerAsAgency();
+    public static SellerAsCommercialEstablishment SAE = new SellerAsCommercialEstablishment();
     public static Register_Sellers  RS = new Register_Sellers ();
+    public static SellerAgencyAddCar  SAAC = new SellerAgencyAddCar();
+    
     //buyers
     public static Register_Buyers  RB = new Register_Buyers();
     //
@@ -169,11 +171,6 @@ public class Login extends javax.swing.JFrame {
 
         if(user != null)
         {
-            if(user.getType().equals("Buyer"))
-            {
-                Login.BNU.setVisible(true);
-                this.dispose();
-            }
             if(user.getRol().equals("Persona") && user.getType().equals("Seller"))
             {
                 Login.SAP.setVisible(true);
@@ -189,6 +186,14 @@ public class Login extends javax.swing.JFrame {
                 Login.SAE.setVisible(true);
                 this.dispose();
             }
+            // Buyers
+            if(user.getRol().equals("Persona") && user.getType().equals("Buyer"))
+            {
+                Login.BNU.setVisible(true);
+                this.dispose();
+            }
+            
+            
         }
         else
         {

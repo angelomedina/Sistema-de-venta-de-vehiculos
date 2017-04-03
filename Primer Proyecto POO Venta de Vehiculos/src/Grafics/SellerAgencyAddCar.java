@@ -211,8 +211,8 @@ vehiculesMethods vehiculesMet = new vehiculesMethods();
     }//GEN-LAST:event_btnSellActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        //Login.SAA.setVisible(true);
-        //this.dispose();
+        Login.SAA.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
     /**
