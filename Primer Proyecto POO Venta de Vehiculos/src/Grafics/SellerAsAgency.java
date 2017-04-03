@@ -74,9 +74,9 @@ public class SellerAsAgency extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addComponent(btnSell)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(btnBack)
                 .addGap(32, 32, 32))
         );

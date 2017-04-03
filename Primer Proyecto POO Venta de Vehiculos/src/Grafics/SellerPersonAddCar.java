@@ -210,6 +210,8 @@ public class SellerPersonAddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtInchargeActionPerformed
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
+        try
+        {
         String type = txtType.getText();
         String brand = txtBrand.getText();
         String incharge = txtIncharge.getText();
@@ -224,6 +226,12 @@ public class SellerPersonAddCar extends javax.swing.JFrame {
         Vehicule vehicule = new UsedVehicules(type,brand,incharge,plate,model,color,transmition,description,mileage,price);
         vehiculesMet.addVehicule(vehicule);
         JOptionPane.showMessageDialog(null,"Agregado a vehiculos en venta exitosamamente!");
+        }
+        catch(Exception e)
+        {
+           JOptionPane.showMessageDialog(null,"Error en los datos"); 
+        }
+
     }//GEN-LAST:event_btnSellActionPerformed
 
     /**

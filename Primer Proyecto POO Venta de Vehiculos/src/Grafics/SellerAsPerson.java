@@ -35,7 +35,7 @@ public class SellerAsPerson extends javax.swing.JFrame {
         btnSell = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Seller as Person");
@@ -51,7 +51,12 @@ public class SellerAsPerson extends javax.swing.JFrame {
 
         jButton1.setText("Agregar oferta a auto");
 
-        jButton2.setText("Atrás");
+        btnBack.setText("Atrás");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,7 +65,7 @@ public class SellerAsPerson extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(btnBack)
                     .addComponent(jButton1)
                     .addComponent(jLabel11)
                     .addComponent(btnSell))
@@ -76,7 +81,7 @@ public class SellerAsPerson extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnBack)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
 
@@ -84,8 +89,14 @@ public class SellerAsPerson extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
-       
+       //Login.SPAC.setVisible(true);
+       //this.dispose();
     }//GEN-LAST:event_btnSellActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        //Login.main.setVisible(true);
+        //this.dispose();
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,9 +135,9 @@ public class SellerAsPerson extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSell;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel11;
     // End of variables declaration//GEN-END:variables
 }

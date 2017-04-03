@@ -119,28 +119,25 @@ vehiculesMethods vehiculesMet = new vehiculesMethods();
                                 .addComponent(txtPlate, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnSell))
                         .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnBack)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTransmition, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtColor))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnBack)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtTransmition, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(22, 22, 22))
+                                .addComponent(txtColor)))))
+                .addGap(40, 122, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +182,7 @@ vehiculesMethods vehiculesMet = new vehiculesMethods();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSell)
                     .addComponent(btnBack))
-                .addContainerGap())
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -196,6 +193,8 @@ vehiculesMethods vehiculesMet = new vehiculesMethods();
     }//GEN-LAST:event_txtInchargeActionPerformed
 
     private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
+        try
+        {
         String type = txtType.getText();
         String brand = txtBrand.getText();
         String incharge = txtIncharge.getText();
@@ -208,6 +207,12 @@ vehiculesMethods vehiculesMet = new vehiculesMethods();
         Vehicule vehicule = new newVehicules(type,brand,incharge,plate,model,color,transmition,price);
         vehiculesMet.addVehicule(vehicule);
         JOptionPane.showMessageDialog(null,"Agregado a vehiculos en venta exitosamamente!");
+        
+        }
+        catch(Exception e)
+        {
+           JOptionPane.showMessageDialog(null,"Error en los datos"); 
+        }
     }//GEN-LAST:event_btnSellActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

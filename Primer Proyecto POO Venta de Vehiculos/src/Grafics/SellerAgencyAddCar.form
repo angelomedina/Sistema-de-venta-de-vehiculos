@@ -52,37 +52,32 @@
                           <Component id="btnSell" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnBack" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtTransmition" min="-2" pref="61" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtPrecio" min="-2" pref="55" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtModel" min="-2" pref="57" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtColor" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnBack" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtTransmition" min="-2" pref="61" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtPrecio" min="-2" pref="55" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtModel" min="-2" pref="57" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace min="40" pref="122" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -141,7 +136,7 @@
                   <Component id="btnSell" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnBack" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace pref="92" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
