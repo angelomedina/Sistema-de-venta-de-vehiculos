@@ -100,7 +100,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-      Login.main.setVisible(true);
+        Login.main.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
@@ -110,7 +110,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUsadosActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-       Login.BN.setVisible(true);
+        Login.BN.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnNewActionPerformed
 

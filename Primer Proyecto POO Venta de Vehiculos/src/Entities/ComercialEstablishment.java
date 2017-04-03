@@ -9,18 +9,21 @@ package Entities;
  *
  * @author Vinicio
  */
-public class ComercialEstablishment  {
+public class ComercialEstablishment  extends User{
     private int _incriptionNumber;
     private String _location;
     private int _telephoneNumber;
     private String _comercialReason;
 
-    public ComercialEstablishment(int _incriptionNumber, String _location, int _telephoneNumber, String _comercialReason) {
-        this._incriptionNumber = _incriptionNumber;
-        this._location = _location;
-        this._telephoneNumber = _telephoneNumber;
-        this._comercialReason = _comercialReason;
+    public ComercialEstablishment(String name, int id, String email, String country, String rol, String pass, String type,int _incriptionNumber, String _location, int _telephoneNumber, String _comercialReason) {
+        super(name, id, email, country, rol, pass, type);
+        this._telephoneNumber=_telephoneNumber;
+        this._comercialReason=_comercialReason;
+        this._location=_location;
+        this._incriptionNumber=_incriptionNumber;
     }
+
+    
 
     public int getIncriptionNumber() {
         return _incriptionNumber;
