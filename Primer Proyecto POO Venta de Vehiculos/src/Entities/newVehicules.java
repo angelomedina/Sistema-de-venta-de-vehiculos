@@ -10,10 +10,10 @@ import java.lang.reflect.Array;
  *
  * @author Vinicio
  */
-public class newVehicules extends Vehicules {
+public class newVehicules extends Vehicule {
     
-    public newVehicules(String _type, String _brand, String _incharge, int _licensePlate, int _model, String _color, String _transmition, long _price, Array[] vehiclesList) {
-        super(_type, _brand, _incharge, _licensePlate, _model, _color, _transmition, _price, vehiclesList);
+    public newVehicules(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition, long price) {
+        super(type, brand, incharge, licensePlate, model, color, transmition, price );
     }
     
     

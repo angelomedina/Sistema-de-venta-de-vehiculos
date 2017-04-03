@@ -10,12 +10,14 @@ import java.lang.reflect.Array;
  *
  * @author Vinicio
  */
-public class UsedVehicules extends Vehicules {
+public class UsedVehicules extends Vehicule {
     
     private int _mileage;
     private String _description;
-    public UsedVehicules(String _type, String _brand, String _incharge, int _licensePlate, int _model, String _color, String _transmition, long _price, Array[] vehiclesList) {
-        super(_type, _brand, _incharge, _licensePlate, _model, _color, _transmition, _price, vehiclesList);
+    public UsedVehicules(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition,String description,int mileage, long price) {
+        super(type, brand, incharge, licensePlate, model, color, transmition, price);
+    this._description = description;
+    this._mileage = mileage;
     }
 
     public int getMileage() {
