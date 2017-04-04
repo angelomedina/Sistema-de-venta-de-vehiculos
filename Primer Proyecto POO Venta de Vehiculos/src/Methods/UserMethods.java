@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class UserMethods {
 
-    ArrayList<User> userList = new ArrayList<User>(); 
+   public ArrayList<User> userList = new ArrayList<User>(); 
     
     public UserMethods() {
     }

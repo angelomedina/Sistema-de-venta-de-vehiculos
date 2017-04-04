@@ -4,22 +4,17 @@
  * and open the template in the editor.
  */
 package Grafics;
-import Abstract.*;
-import Entities.*;
-import Methods.*;
-import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
  */
-public class SellerAsPerson extends javax.swing.JFrame {
-    
-    vehiculesMethods vehiculesMet = new vehiculesMethods();
-    
+public class SellerAsCommercial extends javax.swing.JFrame {
+
     /**
-     * Creates new form Seller_as_Person
+     * Creates new form Seller_as_CommercialEstablishment
      */
-    public SellerAsPerson() {
+    public SellerAsCommercial() {
         initComponents();
     }
 
@@ -32,13 +27,20 @@ public class SellerAsPerson extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnBack = new javax.swing.JButton();
         btnSell = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         btnDiscount = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Seller as Person");
+        setTitle("Seller as   Branch Office");
+
+        btnBack.setText("Atrás");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         btnSell.setText("Poner auto en venta");
         btnSell.addActionListener(new java.awt.event.ActionListener() {
@@ -56,13 +58,6 @@ public class SellerAsPerson extends javax.swing.JFrame {
             }
         });
 
-        btnBack.setText("Atrás");
-        btnBack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBackActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -74,7 +69,7 @@ public class SellerAsPerson extends javax.swing.JFrame {
                     .addComponent(btnDiscount)
                     .addComponent(jLabel11)
                     .addComponent(btnSell))
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,25 +82,25 @@ public class SellerAsPerson extends javax.swing.JFrame {
                 .addComponent(btnDiscount)
                 .addGap(18, 18, 18)
                 .addComponent(btnBack)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
-       Login.SPAC.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_btnSellActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         Login.main.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSellActionPerformed
+        Login.SPAC.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSellActionPerformed
+
     private void btnDiscountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscountActionPerformed
-       Login.SPD.setVisible(true);
-       this.dispose();
+        Login.SCD.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnDiscountActionPerformed
 
     /**
@@ -125,21 +120,23 @@ public class SellerAsPerson extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SellerAsPerson.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAsCommercial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SellerAsPerson.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAsCommercial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SellerAsPerson.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAsCommercial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SellerAsPerson.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SellerAsCommercial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SellerAsPerson().setVisible(true);
+                new SellerAsCommercial().setVisible(true);
             }
         });
     }

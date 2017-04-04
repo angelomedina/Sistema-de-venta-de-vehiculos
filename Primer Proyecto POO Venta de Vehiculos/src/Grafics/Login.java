@@ -5,17 +5,29 @@
  */
 package Grafics;
 
+import Entities.Seler;
+import Abstract.Vehicule;
 import Entities.User;
-import Methods.UserMethods;
+import Methods.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
+import javax.swing.UIManager;
+import javax.swing.UIManager.LookAndFeelInfo;
 /**
  *
  * @author Usuario
  */
 public class Login extends javax.swing.JFrame {
-
+    public static User currentUser;  
+    
+   
+    
+    public static Seler selerMet = new Seler();
     public static UserMethods userMet = new UserMethods();
+    public static vehiculesMethods vehiculesMet = new vehiculesMethods();   
+    
+
+
     //
     public static  buyerNewOrUsed BNU = new buyerNewOrUsed();
     public static buyerNew BN = new buyerNew();
@@ -24,9 +36,14 @@ public class Login extends javax.swing.JFrame {
     //sellers
     public static SellerAsPerson SAP = new SellerAsPerson();
     public static SellerAsAgency SAA = new SellerAsAgency();
-    public static SellerAsCommercialEstablishment SAE = new SellerAsCommercialEstablishment();
+    public static SellerAsCommercial SAE = new SellerAsCommercial();
+    public static SellerCommercialAddCar SCAC = new SellerCommercialAddCar();
     public static Register_Sellers  RS = new Register_Sellers ();
     public static SellerAgencyAddCar  SAAC = new SellerAgencyAddCar();
+    public static SellerPersonAddCar  SPAC = new SellerPersonAddCar();
+    public static SellerAgencyDiscount  SAD = new SellerAgencyDiscount();
+    public static SellerPersonDiscount SPD = new SellerPersonDiscount();
+    public static SellerCommercialDiscount SCD = new SellerCommercialDiscount();
     
     //buyers
     public static Register_Buyers  RB = new Register_Buyers();
@@ -168,6 +185,7 @@ public class Login extends javax.swing.JFrame {
         String name = txtNombre.getText();
         String password = txtContra.getText();
         User user=userMet.ReturnObjet(name, password);
+        currentUser = user;
 
         if(user != null)
         {
@@ -180,6 +198,7 @@ public class Login extends javax.swing.JFrame {
             {
                 Login.SAA.setVisible(true);
                 this.dispose();
+              
             }
             if(user.getRol().equals("Sucursal") && user.getType().equals("Seller"))
             {
@@ -216,34 +235,23 @@ public class Login extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        /*Cambiar apariencia a tipo windows*/
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (Exception e) {
+            // If Nimbus is not available, you can set the GUI to another look and feel.
         }
-        //</editor-fold>
-        //</editor-fold>
+        /*Fin cambiar apariencia*/
 
-        /* Create and display the form */
+ /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                main.setVisible(true);
             }
         });
     }

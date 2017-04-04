@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Abstract;
-
+import Entities.*;
 import java.lang.reflect.Array;
 
 /**
@@ -22,6 +22,7 @@ public abstract class Vehicule {
     private String _transmition;
     private long _price;
     
+    public Vehicule(){}
 
     public Vehicule(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition, long price) {
         this._type = type;
@@ -101,4 +102,5 @@ public abstract class Vehicule {
 
     
     
-}
+    
+    }

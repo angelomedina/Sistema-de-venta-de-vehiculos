@@ -4,25 +4,35 @@
  * and open the template in the editor.
  */
 package Entities;
-
+import Abstract.*;
 import java.lang.reflect.Array;
-
+import java.util.ArrayList;
+import Methods.vehiculesMethods;
+import Grafics.Login;
 /**
  *
  * @author Vinicio
  */
 public class Seler extends User {
 
-    private Array discoutsCars[];
-    private Array vehiclesList[];
+   
+   public ArrayList<Vehicule> selerVehiculesList = new ArrayList<>();  
+   public ArrayList<Vehicule>  selerDiscountList = new ArrayList<>();
     
     
     public Seler(String name, int id, String email, String country,String rol,String pass,String type) {
         super(name, id, email, country ,rol,pass,type);
         
-        
     }
 
+    public Seler(){}
+    
+    
+    public void putOnSale(Vehicule vehicule){
+        selerVehiculesList.add(vehicule);
+    }
+    
+    
     
     public void buyVehicle(){}
     
@@ -30,7 +40,69 @@ public class Seler extends User {
     
     public void modifyMileage(int licensePlate,int newMileage){}
     
-    public void addDiscountCars(){}  //Vehicle vehicle parametro
+    
+    
+    public Vehicule verify(int plate){
+       for(Vehicule i:selerVehiculesList)
+           if(i.getLicensePlate()==plate){
+               return i;
+           }
+       return null;
+   }    
+   
+   public void addVehicule2(Vehicule vehicule){
+       selerDiscountList.add(vehicule);
+       Login.vehiculesMet.discountVehiculesList.add(vehicule);
+       
+  }
+   
+   public String deleteCar(int plate){
+      for(Vehicule i:selerVehiculesList)
+           if(i.getLicensePlate()==plate){
+               selerVehiculesList.remove(i);
+               Login.vehiculesMet.discountVehiculesList.remove(i);
+               return "Elimindado exitosamente!";
+           }
+       
+      return "No existe el auto";
+   }    
+   
+  public String addDiscountToCar(int plate,int disct){
+      Vehicule verifyyy = verify(plate);
+      if(verifyyy!=null){
+      long valorAuto = verifyyy.getPrice();
+      int discount = 0;
+      if(disct==10){
+          discount = (int) (valorAuto-(valorAuto*0.1));
+          verifyyy.setPrice(discount);
+          addVehicule2(verifyyy);
+          deleteCar(plate);
+          System.out.println(discount);
+          return "Oferta agregada";
+      }
+      
+      if(disct==15){
+          discount = (int) (valorAuto-(valorAuto*0.15));
+          verifyyy.setPrice(discount);
+          addVehicule2(verifyyy);
+          deleteCar(plate);
+          System.out.println(discount);
+          return "Oferta agregada";
+      }
+     
+      
+      if(disct==20){
+          discount = (int) (valorAuto-(valorAuto*0.15));
+          verifyyy.setPrice(discount);
+          addVehicule2(verifyyy);
+          deleteCar(plate);
+          System.out.println(discount);
+          return "Oferta agregada";
+      }  
+ 
+      }
+     return "Lo sientimos no se ha encontrado el auto"; 
+  } 
     
     
 }

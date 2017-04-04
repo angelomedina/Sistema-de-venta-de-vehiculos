@@ -22,6 +22,8 @@ public class User implements publicInformation {
     private Array wishList[];
     private Array boughtCars[];
 
+    public User(){}
+    
     public User(String name, int id, String email, String country,String rol,String pass,String type) {
         this._name = name;
         this._id = id;

@@ -13,9 +13,9 @@ import java.util.ArrayList;
  * @author Vinicio
  */
 public class vehiculesMethods {
-   ArrayList<Vehicule> vehiculesList = new ArrayList<>();  
-   ArrayList<Vehicule>  discountVehiculesList = new ArrayList<>(); 
-   Vehicule vehicule;
+  public ArrayList<Vehicule> vehiculesList = new ArrayList<>();  
+  public ArrayList<Vehicule>  discountVehiculesList = new ArrayList<>(); 
+
   
    
    public void addVehicule(Vehicule vehicule){
@@ -39,7 +39,7 @@ public class vehiculesMethods {
       for(Vehicule i:vehiculesList)
            if(i.getLicensePlate()==plate){
                vehiculesList.remove(i);
-               return "Elimindado exitosamente!";
+               return "Eliminadado exitosamente!";
            }
        
       return "No existe el auto";
@@ -68,7 +68,7 @@ public class vehiculesMethods {
      
       
       if(disct==20){
-          discount = (int) (valorAuto-(valorAuto*0.15));
+          discount = (int) (valorAuto-(valorAuto*0.20));
           verifyyy.setPrice(discount);
           addVehicule2(verifyyy);
           deleteCar(plate);
@@ -76,6 +76,6 @@ public class vehiculesMethods {
       }  
  
       }
-     return "Lo sientimos ha habido un error"; 
+     return "Lo sientimos no se ha encontrado el auto"; 
   } 
 }
