@@ -17,6 +17,8 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
      */
     public buyerNewOrUsed() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
         
     }
 
@@ -47,7 +49,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        StatusCard = new javax.swing.JMenuItem();
 
         jMenuItem13.setText("jMenuItem13");
 
@@ -87,11 +89,6 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         jMenu2.setText(" My Profile");
 
         jMenuItem1.setText("jMenuItem1");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
         jMenu2.add(jMenuItem1);
 
         jMenuItem2.setText("jMenuItem2");
@@ -123,8 +120,13 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
 
         jMenu1.setText("Card");
 
-        jMenuItem7.setText("jMenuItem7");
-        jMenu1.add(jMenuItem7);
+        StatusCard.setText("Estado de mi Tarjeta");
+        StatusCard.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StatusCardActionPerformed(evt);
+            }
+        });
+        jMenu1.add(StatusCard);
 
         jMenuBar1.add(jMenu1);
 
@@ -194,9 +196,10 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnOfferActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void StatusCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatusCardActionPerformed
+        Login.CR.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_StatusCardActionPerformed
 
     
     
@@ -242,6 +245,7 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem StatusCard;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnOffer;
@@ -259,7 +263,6 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     public javax.swing.JMenuItem jMenuItem4;
     javax.swing.JMenuItem jMenuItem5;
     public javax.swing.JMenuItem jMenuItem6;
-    public javax.swing.JMenuItem jMenuItem7;
     public javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }

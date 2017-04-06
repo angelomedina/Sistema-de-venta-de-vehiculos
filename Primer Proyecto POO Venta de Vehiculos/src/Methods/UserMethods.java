@@ -5,6 +5,7 @@
  */
 package Methods;
 
+import Entities.CreditCard;
 import Entities.User;
 import java.util.ArrayList;
 
@@ -16,7 +17,8 @@ import java.util.ArrayList;
 public class UserMethods {
 
    public ArrayList<User> userList = new ArrayList<User>(); 
-    
+   
+
     public UserMethods() {
     }
     
@@ -53,6 +55,7 @@ public class UserMethods {
     public void registrar(User user){
         userList.add(user);
     }
+
     
     public void addToWishList(int licensePlate){}
 

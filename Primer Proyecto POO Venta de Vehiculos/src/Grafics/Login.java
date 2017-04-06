@@ -21,11 +21,15 @@ import javax.swing.UIManager.LookAndFeelInfo;
  */
 public class Login extends javax.swing.JFrame {
     public static User currentUser;  
-
-    public static User getCurrentUser() {
-        return currentUser;
+    public  User currentUser2;  
+    
+    public  User getCurrentUser2() {
+        return currentUser2;
     }
     
+    public  static User getCurrentUser() {
+        return currentUser;
+    }
    
     
     public static Seler selerMet = new Seler();
@@ -53,6 +57,8 @@ public class Login extends javax.swing.JFrame {
     
     //buyers
     public static Register_Buyers  RB = new Register_Buyers();
+    public static MyStatusCard     CR = new MyStatusCard ();
+ 
     //
     public static Login main = new Login();
     /**
@@ -204,18 +210,21 @@ public class Login extends javax.swing.JFrame {
         
         String name = txtNombre.getText();
         String password = txtContra.getText();
+
         User user=userMet.ReturnObjet(name, password);
         currentUser = user;
 
         
-        Login.BNU.jMenuItem1.setText("Nombre: "+user.getName());
-        Login.BNU.jMenuItem2.setText("Id: "+user.getId());
-        Login.BNU.jMenuItem3.setText("Correo: "+user.getEmail());
-        Login.BNU.jMenuItem4.setText("Rol: "+user.getRol());
-        Login.BNU.jMenuItem5.setText("Tipo: "+user.getType());
-        Login.BNU.jMenuItem7.setText("Dinero: "+nuevo.getCard().getMoney());
+        
         if(user != null)
         {
+            Login.BNU.jMenuItem1.setText("Nombre: "+user.getName());
+            Login.BNU.jMenuItem2.setText("Id: "+user.getId());
+            Login.BNU.jMenuItem3.setText("Correo: "+user.getEmail());
+            Login.BNU.jMenuItem4.setText("Rol: "+user.getRol());
+            Login.BNU.jMenuItem5.setText("Tipo: "+user.getType());
+            //Login.BNU.jMenuItem7.setText("Dinero: "+nuevo.getCard().getMoney());
+            
             if(user.getRol().equals("Persona") && user.getType().equals("Seller"))
             {
                 Login.SAP.setVisible(true);

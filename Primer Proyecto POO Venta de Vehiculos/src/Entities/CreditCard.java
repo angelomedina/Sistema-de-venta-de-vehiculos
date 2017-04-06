@@ -64,6 +64,14 @@ public class CreditCard {
         this._nameInCharge = _nameInCharge;
     }
 
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
     
 
     

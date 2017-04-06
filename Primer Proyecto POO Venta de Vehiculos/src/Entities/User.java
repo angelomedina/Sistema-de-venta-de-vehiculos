@@ -7,6 +7,7 @@ package Entities;
 
 import java.lang.reflect.Array;
 import Interface.*;
+import java.util.ArrayList;
 /**
  *
  * @author Vinicio
@@ -21,6 +22,13 @@ public class User implements publicInformation {
     private String _password;
     private Array wishList[];
     private Array boughtCars[];
+    
+     public ArrayList<CreditCard> myCard   = new ArrayList<CreditCard>(); 
+
+    public ArrayList<CreditCard> getMyCard() {
+        return myCard;
+    }
+
 
     public User(){}
     
@@ -102,6 +110,9 @@ public class User implements publicInformation {
         this._rol = _rol;
     }
     
+    public void myCreditCard(CreditCard  card){
+        myCard.add(card);
+    }
     
     
     public void login(){};
