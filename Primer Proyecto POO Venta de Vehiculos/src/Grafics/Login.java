@@ -7,6 +7,8 @@ package Grafics;
 
 import Entities.Seler;
 import Abstract.Vehicule;
+import Entities.Buyer;
+import Entities.CreditCard;
 import Entities.User;
 import Methods.*;
 import java.util.ArrayList;
@@ -19,6 +21,10 @@ import javax.swing.UIManager.LookAndFeelInfo;
  */
 public class Login extends javax.swing.JFrame {
     public static User currentUser;  
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
     
    
     
@@ -180,13 +186,34 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    //quema de datos
+    //User user = new User("Angelo",2016125360,"angelomg@gmail.com","Costa Rica","Persona","1","Buyer");
+
+    CreditCard card = new CreditCard(111,222,"06/04/18","Angelo",333,100000);
+    Buyer      nuevo = new Buyer("Angelo",333,"angelogm@gmail.com","Costa Rica","Persona","abc","Buyer",card);
+    
+    
+    
+    //User user = new User(name, id,email,country,"Persona",password,type);
+    
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
 
+        Login.userMet.registrar(nuevo);//quema de 
+        
+        
         String name = txtNombre.getText();
         String password = txtContra.getText();
         User user=userMet.ReturnObjet(name, password);
         currentUser = user;
 
+        
+        Login.BNU.jMenuItem1.setText("Nombre: "+user.getName());
+        Login.BNU.jMenuItem2.setText("Id: "+user.getId());
+        Login.BNU.jMenuItem3.setText("Correo: "+user.getEmail());
+        Login.BNU.jMenuItem4.setText("Rol: "+user.getRol());
+        Login.BNU.jMenuItem5.setText("Tipo: "+user.getType());
+        Login.BNU.jMenuItem7.setText("Dinero: "+nuevo.getCard().getMoney());
         if(user != null)
         {
             if(user.getRol().equals("Persona") && user.getType().equals("Seller"))
@@ -207,6 +234,11 @@ public class Login extends javax.swing.JFrame {
             }
             // Buyers
             if(user.getRol().equals("Persona") && user.getType().equals("Buyer"))
+            {
+                Login.BNU.setVisible(true);
+                this.dispose();
+            }
+            if(user.getRol().equals("Sucursal") && user.getType().equals("Buyer"))
             {
                 Login.BNU.setVisible(true);
                 this.dispose();
@@ -267,6 +299,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtContra;
-    private javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }

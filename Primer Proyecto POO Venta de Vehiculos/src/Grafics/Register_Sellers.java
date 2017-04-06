@@ -522,6 +522,7 @@ public class Register_Sellers extends javax.swing.JFrame {
             }
             else
             {
+                
                 BranchOffice user = new BranchOffice(name, id,email,country,"Sucursal",password,type,numbreInscription,ubication,cel,razon);
                 boolean verify=userMet.verifyUser(name,password);
                 if(verify==false)

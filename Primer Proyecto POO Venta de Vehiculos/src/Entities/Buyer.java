@@ -6,6 +6,7 @@
 package Entities;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -14,9 +15,18 @@ import java.util.Calendar;
  */
 public class Buyer extends User {
     
-    public Buyer(String name, int id, String email, String country,String rol,String pass,String type) {
+    private CreditCard _card;
+    
+    public Buyer(String name, int id, String email, String country,String rol,String pass,String type,CreditCard card) {
         super(name, id, email, country,rol,pass,type);
+        this._card=card;
     }
+
+    public CreditCard getCard() {
+        return _card;
+    }
+    
+    
     
     public void record(){}
     

@@ -11,11 +11,13 @@ package Grafics;
  */
 public class buyerNewOrUsed extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form buyerMain
      */
     public buyerNewOrUsed() {
         initComponents();
+        
     }
 
     /**
@@ -27,11 +29,27 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem13 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         btnUsados = new javax.swing.JButton();
         btnNew = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         btnOffer = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
+
+        jMenuItem13.setText("jMenuItem13");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Comprador");
@@ -66,6 +84,52 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
             }
         });
 
+        jMenu2.setText(" My Profile");
+
+        jMenuItem1.setText("jMenuItem1");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
+        jMenuItem2.setText("jMenuItem2");
+        jMenu2.add(jMenuItem2);
+
+        jMenuItem3.setText("jMenuItem3");
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem4.setText("jMenuItem4");
+        jMenu2.add(jMenuItem4);
+
+        jMenuItem5.setText("jMenuItem5");
+        jMenu2.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Opcions");
+
+        jMenuItem6.setText("Record");
+        jMenu4.add(jMenuItem6);
+
+        jMenuItem9.setText("Total Purchases");
+        jMenu4.add(jMenuItem9);
+
+        jMenuItem10.setText("Total Debts");
+        jMenu4.add(jMenuItem10);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu1.setText("Card");
+
+        jMenuItem7.setText("jMenuItem7");
+        jMenu1.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,17 +137,24 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(btnUsados)
-                    .addComponent(btnNew)
-                    .addComponent(btnBack)
-                    .addComponent(btnOffer))
-                .addContainerGap(428, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(btnUsados)
+                            .addComponent(btnNew)
+                            .addComponent(btnOffer))
+                        .addGap(0, 366, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(16, 16, 16)
+                .addComponent(btnBack)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(btnUsados)
@@ -91,22 +162,26 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
                 .addComponent(btnNew)
                 .addGap(18, 18, 18)
                 .addComponent(btnOffer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(btnBack)
-                .addGap(59, 59, 59))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+   
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         Login.main.setVisible(true);
         dispose();
+        
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnUsadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsadosActionPerformed
          Login.BU.setVisible(true);
          this.dispose();
+         
+   
     }//GEN-LAST:event_btnUsadosActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
@@ -119,6 +194,13 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnOfferActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -152,7 +234,9 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new buyerNewOrUsed().setVisible(true);
+                
             }
         });
     }
@@ -163,5 +247,19 @@ public class buyerNewOrUsed extends javax.swing.JFrame {
     private javax.swing.JButton btnOffer;
     private javax.swing.JButton btnUsados;
     private javax.swing.JLabel jLabel1;
+    public javax.swing.JMenu jMenu1;
+    public javax.swing.JMenu jMenu2;
+    public javax.swing.JMenu jMenu4;
+    public javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem13;
+    public javax.swing.JMenuItem jMenuItem2;
+    public javax.swing.JMenuItem jMenuItem3;
+    public javax.swing.JMenuItem jMenuItem4;
+    javax.swing.JMenuItem jMenuItem5;
+    public javax.swing.JMenuItem jMenuItem6;
+    public javax.swing.JMenuItem jMenuItem7;
+    public javax.swing.JMenuItem jMenuItem9;
     // End of variables declaration//GEN-END:variables
 }
