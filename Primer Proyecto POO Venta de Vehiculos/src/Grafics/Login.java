@@ -10,6 +10,7 @@ import Abstract.Vehicule;
 import Entities.Buyer;
 import Entities.CreditCard;
 import Entities.User;
+import Entities.newVehicules;
 import Methods.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -37,7 +38,7 @@ public class Login extends javax.swing.JFrame {
     public static vehiculesMethods vehiculesMet = new vehiculesMethods();   
     
 
-
+    public static SeeCars SC = new SeeCars();
     //
     public static  buyerNewOrUsed BNU = new buyerNewOrUsed();
     public static buyerNew BN = new buyerNew();
@@ -76,7 +77,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         btm_registrar_Vendedores_ = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSee = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -97,7 +98,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("View");
+        btnSee.setText("Ver");
+        btnSee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeeActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre:");
 
@@ -153,7 +159,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(btm_registrar_Vendedores_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btm_registrar_Compradores_))
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSee, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59))
         );
         layout.setVerticalGroup(
@@ -183,7 +189,7 @@ public class Login extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btm_registrar_Compradores_)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)
+                        .addComponent(btnSee)
                         .addGap(33, 33, 33))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
@@ -199,7 +205,7 @@ public class Login extends javax.swing.JFrame {
     CreditCard card = new CreditCard(111,222,"06/04/18","Angelo",333,100000);
     Buyer      nuevo = new Buyer("Angelo",333,"angelogm@gmail.com","Costa Rica","Persona","abc","Buyer",card);
     
-    
+    Vehicule carro1 = new newVehicules("PickUp","Nissan","Juan",12334,2007,"Blanco","332",7000000);
     
     //User user = new User(name, id,email,country,"Persona",password,type);
     
@@ -272,6 +278,12 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btm_registrar_Compradores_ActionPerformed
 
+    private void btnSeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeeActionPerformed
+        Login.SC.print();
+        Login.SC.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnSeeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -301,7 +313,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btm_registrar_Compradores_;
     private javax.swing.JButton btm_registrar_Vendedores_;
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnSee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

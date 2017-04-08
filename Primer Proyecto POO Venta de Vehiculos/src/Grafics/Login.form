@@ -52,7 +52,7 @@
                       <Component id="btm_registrar_Vendedores_" max="32767" attributes="0"/>
                       <Component id="btm_registrar_Compradores_" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jButton3" min="-2" pref="66" max="-2" attributes="0"/>
+                  <Component id="btnSee" min="-2" pref="66" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
           </Group>
@@ -88,7 +88,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btm_registrar_Compradores_" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSee" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
@@ -107,10 +107,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btm_registrar_Vendedores_ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnSee">
       <Properties>
-        <Property name="text" type="java.lang.String" value="View"/>
+        <Property name="text" type="java.lang.String" value="Ver"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSeeActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
