@@ -6,16 +6,16 @@
 package Grafics;
 import Abstract.*;
 import Entities.*;
-import static Grafics.Login.userMet;
+
 import Methods.vehiculesMethods;
 import javax.swing.JOptionPane;
-import static Grafics.Login.*;
+
 /**
  *
  * @author Vinicio
  */
 public class SellerAgencyAddCar extends javax.swing.JFrame {
-    Login met = new Login(); 
+    
     vehiculesMethods vehiculesMet = new vehiculesMethods();
     Seler selMet = new Seler();
     newVehicules metV = new newVehicules(); 
@@ -197,18 +197,18 @@ public class SellerAgencyAddCar extends javax.swing.JFrame {
         long price = Integer.valueOf(txtPrecio.getText());
 
         Vehicule vehicule = new newVehicules(type,brand,Login.currentUser.getName(),plate,model,color,transmition,price);
+        if(Login.selerMet.repiteCar(plate)){
+            JOptionPane.showMessageDialog(null,"Lo sentimos, ya existe un auto con esa placa.");
+        }
+        else{
         Login.vehiculesMet.addVehicule(vehicule);
         Login.selerMet.putOnSale(vehicule);
-        imprime();
-        
-        
-        
-        
+    
         JOptionPane.showMessageDialog(null,"Agregado a vehiculos en venta exitosamamente!");
         
         
         }
-        
+        }
         catch(Exception e)
         {
            JOptionPane.showMessageDialog(null,"Error en los datos"); 
@@ -216,6 +216,7 @@ public class SellerAgencyAddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSellActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        Login.SAA.print();
         Login.SAA.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

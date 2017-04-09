@@ -59,8 +59,8 @@ public class Seler extends User {
    public String deleteCar(int plate){
       for(Vehicule i:selerVehiculesList)
            if(i.getLicensePlate()==plate){
-               selerVehiculesList.remove(i);
-               Login.vehiculesMet.discountVehiculesList.remove(i);
+                Login.vehiculesMet.vehiculesList.remove(i);
+             
                return "Elimindado exitosamente!";
            }
        
@@ -77,7 +77,7 @@ public class Seler extends User {
           verifyyy.setPrice(discount);
           addVehicule2(verifyyy);
           deleteCar(plate);
-          System.out.println(discount);
+          //System.out.println(verifyyy.getIncharge() + verifyyy.getPrice());
           return "Oferta agregada";
       }
       
@@ -86,17 +86,17 @@ public class Seler extends User {
           verifyyy.setPrice(discount);
           addVehicule2(verifyyy);
           deleteCar(plate);
-          System.out.println(discount);
+          //System.out.println(verifyyy.getIncharge() + verifyyy.getPrice());
           return "Oferta agregada";
       }
      
       
       if(disct==20){
-          discount = (int) (valorAuto-(valorAuto*0.15));
+          discount = (int) (valorAuto-(valorAuto*0.20));
           verifyyy.setPrice(discount);
           addVehicule2(verifyyy);
           deleteCar(plate);
-          System.out.println(discount);
+          //System.out.println(verifyyy.getIncharge() + verifyyy.getPrice());
           return "Oferta agregada";
       }  
  
@@ -104,5 +104,12 @@ public class Seler extends User {
      return "Lo sientimos no se ha encontrado el auto"; 
   } 
     
-    
+    public boolean repiteCar(int plate){
+       for(Vehicule i:Login.selerMet.selerVehiculesList)
+           if(i.getLicensePlate()==plate){ 
+               return true;
+     }    
+       return false;
+}
+
 }

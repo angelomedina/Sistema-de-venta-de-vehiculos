@@ -39,7 +39,7 @@ public class SeeCars extends javax.swing.JFrame {
     }
 
     public void print() {
-        String dato[] = new String[9];
+        String dato[] = new String[6];
         clear();
         for (Vehicule i : Login.vehiculesMet.vehiculesList) {
         dato[0] = i.getType();

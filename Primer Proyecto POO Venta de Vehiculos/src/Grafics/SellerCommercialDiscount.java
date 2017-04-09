@@ -107,6 +107,8 @@ public class SellerCommercialDiscount extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDiscountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscountActionPerformed
+        try
+        {
         int plate =Integer.valueOf(txtPlate.getText());
         int i = comboBoxDiscount.getSelectedIndex();
         int discount = 0;
@@ -127,9 +129,16 @@ public class SellerCommercialDiscount extends javax.swing.JFrame {
         String method = Login.selerMet.addDiscountToCar(plate, discount);
 
         JOptionPane.showMessageDialog(null, method);
+        
+         }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,"Error en los datos");
+        }
     }//GEN-LAST:event_btnDiscountActionPerformed
 
     private void btnAtrásActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrásActionPerformed
+        Login.SAE.print();
         Login.SAE.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnAtrásActionPerformed

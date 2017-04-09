@@ -7,12 +7,13 @@ package Grafics;
 
 import Entities.Seler;
 import Abstract.Vehicule;
+import Entities.Agency;
 import Entities.Buyer;
+import Entities.ComercialEstablishment;
 import Entities.CreditCard;
 import Entities.User;
 import Entities.newVehicules;
 import Methods.*;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
@@ -70,7 +71,13 @@ public class Login extends javax.swing.JFrame {
         //for center the JForm
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+    
+  
+    
+        Login.vehiculesMet.addVehicule(carro1);
+    
     }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -201,19 +208,26 @@ public class Login extends javax.swing.JFrame {
     
     //quema de datos
     //User user = new User("Angelo",2016125360,"angelomg@gmail.com","Costa Rica","Persona","1","Buyer");
-
+    
+    
     CreditCard card = new CreditCard(111,222,"06/04/18","Angelo",333,100000);
     Buyer      nuevo = new Buyer("Angelo",333,"angelogm@gmail.com","Costa Rica","Persona","abc","Buyer",card);
-    
+    Agency primeroAgencia = new Agency("Vinicio",333,"viniciorodriguez@gmail.com","CR","Agencia","123","Seller",12233,"Muelle",60074888,"Hala","Nissan");
+    ComercialEstablishment primeroComercio = new ComercialEstablishment("Vinicio",333,"viniciorodriguez@gmail.com","CR","Sucursal","123","Seller",12233,"Muelle",60074888,"Hala");
+    Seler primeroPersona = new Seler("Favier",333,"viniciorodriguez@gmail.com","CR","Persona","123","Seller");
     Vehicule carro1 = new newVehicules("PickUp","Nissan","Juan",12334,2007,"Blanco","332",7000000);
     
     //User user = new User(name, id,email,country,"Persona",password,type);
     
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-
+       
         Login.userMet.registrar(nuevo);//quema de 
-        
-        
+        Login.userMet.registrar(primeroAgencia);
+        Login.userMet.registrar(primeroComercio);
+        Login.userMet.registrar(primeroPersona);
+          
+          
+          
         String name = txtNombre.getText();
         String password = txtContra.getText();
 
@@ -238,18 +252,21 @@ public class Login extends javax.swing.JFrame {
             }
             if(user.getRol().equals("Agencia") && user.getType().equals("Seller"))
             {
+                Login.SAA.print();
                 Login.SAA.setVisible(true);
                 this.dispose();
               
             }
             if(user.getRol().equals("Sucursal") && user.getType().equals("Seller"))
             {
+                Login.SAE.print();
                 Login.SAE.setVisible(true);
                 this.dispose();
             }
             // Buyers
             if(user.getRol().equals("Persona") && user.getType().equals("Buyer"))
             {
+                Login.SAP.print();
                 Login.BNU.setVisible(true);
                 this.dispose();
             }

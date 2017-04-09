@@ -31,7 +31,7 @@ public class SellerPersonDiscount extends javax.swing.JFrame {
 
         comboBoxDiscount = new javax.swing.JComboBox<>();
         btnDiscount = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtPlate = new javax.swing.JTextField();
@@ -48,10 +48,10 @@ public class SellerPersonDiscount extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Atrás");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAtrasActionPerformed(evt);
             }
         });
 
@@ -80,7 +80,7 @@ public class SellerPersonDiscount extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnDiscount)
                         .addGap(40, 40, 40)
-                        .addComponent(jButton1)))
+                        .addComponent(btnAtras)))
                 .addContainerGap(174, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -99,7 +99,7 @@ public class SellerPersonDiscount extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDiscount)
-                    .addComponent(jButton1))
+                    .addComponent(btnAtras))
                 .addContainerGap(161, Short.MAX_VALUE))
         );
 
@@ -130,10 +130,11 @@ public class SellerPersonDiscount extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnDiscountActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Login.SAA.setVisible(true);
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        Login.SAP.print();
+        Login.SAP.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,9 +172,9 @@ public class SellerPersonDiscount extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnDiscount;
     private javax.swing.JComboBox<String> comboBoxDiscount;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
