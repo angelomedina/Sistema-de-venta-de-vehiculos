@@ -212,9 +212,9 @@ public class Login extends javax.swing.JFrame {
     
     CreditCard card = new CreditCard(111,222,"06/04/18","Angelo",333,100000);
     Buyer      nuevo = new Buyer("Angelo",333,"angelogm@gmail.com","Costa Rica","Persona","abc","Buyer",card);
-    Agency primeroAgencia = new Agency("Vinicio",333,"viniciorodriguez@gmail.com","CR","Agencia","123","Seller",12233,"Muelle",60074888,"Hala","Nissan");
-    ComercialEstablishment primeroComercio = new ComercialEstablishment("Vinicio",333,"viniciorodriguez@gmail.com","CR","Sucursal","123","Seller",12233,"Muelle",60074888,"Hala");
-    Seler primeroPersona = new Seler("Favier",333,"viniciorodriguez@gmail.com","CR","Persona","123","Seller");
+    User primeroAgencia = new Agency("Vinicio",333,"viniciorodriguez@gmail.com","CR","Agencia","123","Seller",12233,"Muelle",60074888,"Hala","Nissan");
+    User primeroComercio = new ComercialEstablishment("Vinicio",333,"viniciorodriguez@gmail.com","CR","Sucursal","123","Seller",12233,"Muelle",60074888,"Hala");
+    User primeroPersona = new Seler("Favier",333,"viniciorodriguez@gmail.com","CR","Persona","123","Seller");
     Vehicule carro1 = new newVehicules("PickUp","Nissan","Juan",12334,2007,"Blanco","332",7000000);
     
     //User user = new User(name, id,email,country,"Persona",password,type);
@@ -252,7 +252,7 @@ public class Login extends javax.swing.JFrame {
             }
             if(user.getRol().equals("Agencia") && user.getType().equals("Seller"))
             {
-                Login.SAA.print();
+                Login.SAA.print(currentUser);
                 Login.SAA.setVisible(true);
                 this.dispose();
               

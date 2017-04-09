@@ -144,7 +144,7 @@ public class SellerAgencyDiscount extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDiscountActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-       Login.SAA.print();
+       Login.SAA.print(Login.currentUser);
        Login.SAA.setVisible(true);
        this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

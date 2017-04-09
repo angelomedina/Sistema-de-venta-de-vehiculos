@@ -203,6 +203,11 @@ public class SellerAgencyAddCar extends javax.swing.JFrame {
         else{
         Login.vehiculesMet.addVehicule(vehicule);
         Login.selerMet.putOnSale(vehicule);
+        
+        if(Login.currentUser instanceof Agency){
+            Agency agency = (Agency)Login.currentUser;           
+            agency.putOnSale(vehicule);
+        }
     
         JOptionPane.showMessageDialog(null,"Agregado a vehiculos en venta exitosamamente!");
         
@@ -216,7 +221,7 @@ public class SellerAgencyAddCar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSellActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        Login.SAA.print();
+        Login.SAA.print(Login.currentUser);
         Login.SAA.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnBackActionPerformed

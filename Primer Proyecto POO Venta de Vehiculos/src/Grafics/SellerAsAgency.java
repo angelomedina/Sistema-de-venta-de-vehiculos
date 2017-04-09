@@ -41,22 +41,29 @@ public class SellerAsAgency extends javax.swing.JFrame {
         }
     }
 
-    public void print() {
+    public void print(User user) {
         String dato[] = new String[7];
         clear();
-        for (Vehicule i : Login.selerMet.selerVehiculesList) {
-        dato[0] = i.getType();
-        dato[1] = i.getBrand();
-        dato[2] = i.getTransmition();
-        String modelString = Integer.toString(i.getModel());
-        dato[3] = modelString;   
-        dato[4] = i.getColor();
-        String plateString = Long.toString(i.getLicensePlate());
-        dato[5] = plateString;
-        String priceString = Long.toString(i.getPrice());
-        dato[6] = "$"+priceString;
-        car.addRow(dato);
+        if(user instanceof Agency){
+            Agency agency = (Agency) user;
+            if(agency.selerVehiculesList!=null){
+                for (Vehicule i : agency.selerVehiculesList) {
+                dato[0] = i.getType();
+                dato[1] = i.getBrand();
+                dato[2] = i.getTransmition();
+                String modelString = Integer.toString(i.getModel());
+                dato[3] = modelString;   
+                dato[4] = i.getColor();
+                String plateString = Long.toString(i.getLicensePlate());
+                dato[5] = plateString;
+                String priceString = Long.toString(i.getPrice());
+                dato[6] = "$"+priceString;
+                car.addRow(dato);
+                }
+            }
         }
+
+    
     }
     /**
      * This method is called from within the constructor to initialize the form.

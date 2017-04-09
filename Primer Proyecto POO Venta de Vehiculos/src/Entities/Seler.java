@@ -5,9 +5,9 @@
  */
 package Entities;
 import Abstract.*;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
-import Methods.vehiculesMethods;
+
 import Grafics.Login;
 /**
  *
@@ -16,13 +16,13 @@ import Grafics.Login;
 public class Seler extends User {
 
    
-   public ArrayList<Vehicule> selerVehiculesList = new ArrayList<>();  
-   public ArrayList<Vehicule>  selerDiscountList = new ArrayList<>();
+   public ArrayList<Vehicule> selerVehiculesList= new ArrayList<>(); 
+   public ArrayList<Vehicule>  selerDiscountList= new ArrayList<>();
     
     
     public Seler(String name, int id, String email, String country,String rol,String pass,String type) {
         super(name, id, email, country ,rol,pass,type);
-        
+          
     }
 
     public Seler(){}
@@ -31,7 +31,6 @@ public class Seler extends User {
     public void putOnSale(Vehicule vehicule){
         selerVehiculesList.add(vehicule);
     }
-    
     
     
     public void buyVehicle(){}
@@ -61,7 +60,7 @@ public class Seler extends User {
            if(i.getLicensePlate()==plate){
                 Login.vehiculesMet.vehiculesList.remove(i);
              
-               return "Elimindado exitosamente!";
+               return "Eliminado exitosamente!";
            }
        
       return "No existe el auto";
@@ -105,11 +104,12 @@ public class Seler extends User {
   } 
     
     public boolean repiteCar(int plate){
-       for(Vehicule i:Login.selerMet.selerVehiculesList)
+      
+        for(Vehicule i:Login.selerMet.selerVehiculesList)
            if(i.getLicensePlate()==plate){ 
                return true;
      }    
        return false;
 }
-
-}
+   
+    }
