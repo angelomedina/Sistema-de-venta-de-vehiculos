@@ -21,10 +21,11 @@ public abstract class Vehicule {
     private String _color;
     private String _transmition;
     private long _price;
+    private String _newOrused;
     
     public Vehicule(){}
 
-    public Vehicule(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition, long price) {
+    public Vehicule(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition, long price,String newOrused) {
         this._type = type;
         this._brand = brand;
         this._incharge = incharge;
@@ -33,9 +34,19 @@ public abstract class Vehicule {
         this._color = color;
         this._transmition = transmition;
         this._price = price;
-        
+        this._newOrused= newOrused;
     }
 
+    public String getNewOrused() {
+        return _newOrused;
+    }
+
+    public void setNewOrused(String _newOrused) {
+        this._newOrused = _newOrused;
+    }
+
+    
+    
     public String getType() {
         return _type;
     }

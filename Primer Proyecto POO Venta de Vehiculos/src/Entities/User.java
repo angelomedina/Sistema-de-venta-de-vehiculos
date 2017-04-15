@@ -5,6 +5,7 @@
  */
 package Entities;
 
+import Abstract.Vehicule;
 import java.lang.reflect.Array;
 import Interface.*;
 import java.util.ArrayList;
@@ -21,10 +22,11 @@ public class User implements publicInformation {
     private String _rol;
     private String _password;
     private Array wishList[];
-    private Array boughtCars[];
-    
-     public ArrayList<CreditCard> myCard   = new ArrayList<CreditCard>(); 
 
+    
+   public ArrayList<CreditCard> myCard   = new ArrayList<CreditCard>(); 
+   public ArrayList<Vehicule > boughtCars   = new ArrayList<Vehicule >(); 
+   
     public ArrayList<CreditCard> getMyCard() {
         return myCard;
     }
@@ -86,13 +88,6 @@ public class User implements publicInformation {
         this.wishList = wishList;
     }
 
-    public Array[] getBoughtCars() {
-        return boughtCars;
-    }
-
-    public void setBoughtCars(Array[] boughtCars) {
-        this.boughtCars = boughtCars;
-    }
 
     public String getType() {
         return _type;

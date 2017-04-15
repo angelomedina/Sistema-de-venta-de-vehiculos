@@ -20,6 +20,8 @@ public class MyStatusCard extends javax.swing.JFrame {
      */
     public MyStatusCard() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -39,27 +41,30 @@ public class MyStatusCard extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         _Atras_ = new javax.swing.JButton();
         _ver_ = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("My Card");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 0));
         jLabel1.setText("Numero de Tarjeta");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel2.setForeground(new java.awt.Color(51, 51, 0));
         jLabel2.setText("Fecha de Vencimiento ");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 0));
         jLabel3.setText("Saldo");
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("...");
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("...");
 
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("...");
 
         _Atras_.setText("Atras");
         _Atras_.addActionListener(new java.awt.event.ActionListener() {
@@ -75,48 +80,70 @@ public class MyStatusCard extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 0));
+        jLabel7.setText("Codigo de Seguridad");
+
+        jLabel8.setText("...");
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Grafics/Imagenes/paypal-logo.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(_Atras_)
-                .addGap(29, 29, 29))
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(_ver_)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(_ver_)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel7))
                         .addGap(77, 77, 77)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5)
-                            .addComponent(jLabel4))))
-                .addContainerGap(131, Short.MAX_VALUE))
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                        .addComponent(_Atras_)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(jLabel10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_Atras_)
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(26, 26, 26)
+                    .addComponent(_Atras_)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(28, 28, 28)
                 .addComponent(_ver_)
                 .addContainerGap(34, Short.MAX_VALUE))
         );
@@ -130,15 +157,32 @@ public class MyStatusCard extends javax.swing.JFrame {
     }//GEN-LAST:event__Atras_ActionPerformed
 
     private void _ver_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__ver_ActionPerformed
-        int money=(int) Login.main.currentUser.getMyCard().get(0).getMoney();
-        String fecha =Login.main.currentUser.getMyCard().get(0).getDueDate();
-        int number=(int) Login.main.currentUser.getMyCard().get(0).getNumber();
-        
+       
+    
+    if( Login.main.currentUser.getRol().equals("Sucursal"))
+    {
+        int money=(int) Login.main.currentUser2.getCard().getMoney();
+        String fecha =Login.main.currentUser2.getCard().getDueDate();
+        int number=(int) Login.main.currentUser2.getCard().getNumber();
+        int ping=(int) Login.main.currentUser2.getCard().getPing(); 
         
         jLabel4.setText(Integer.toString(number));
         jLabel5.setText(fecha);
         jLabel6.setText(Integer.toString(money));
+        jLabel8.setText(Integer.toString(ping));
+    }
+    else
+    {
+        int money=(int) Login.main.currentUser.myCard.get(0).getMoney();
+        String fecha =Login.main.currentUser.myCard.get(0).getDueDate();
+        int number=(int) Login.main.currentUser.myCard.get(0).getNumber();
+        int ping=(int) Login.main.currentUser.myCard.get(0).getPing();
         
+        jLabel4.setText(Integer.toString(number));
+        jLabel5.setText(fecha);
+        jLabel6.setText(Integer.toString(money));
+        jLabel8.setText(Integer.toString(ping));
+    }
         
     }//GEN-LAST:event__ver_ActionPerformed
 
@@ -181,10 +225,13 @@ public class MyStatusCard extends javax.swing.JFrame {
     private javax.swing.JButton _Atras_;
     private javax.swing.JButton _ver_;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

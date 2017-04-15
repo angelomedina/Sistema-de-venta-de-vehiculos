@@ -8,6 +8,8 @@ package Grafics;
 import Entities.Seler;
 import Abstract.Vehicule;
 import Entities.Agency;
+import Entities.BillBank;
+import Entities.BranchOffice;
 import Entities.Buyer;
 import Entities.ComercialEstablishment;
 import Entities.CreditCard;
@@ -23,9 +25,9 @@ import javax.swing.UIManager.LookAndFeelInfo;
  */
 public class Login extends javax.swing.JFrame {
     public static User currentUser;  
-    public  User currentUser2;  
+    public static BranchOffice  currentUser2;  
     
-    public  User getCurrentUser2() {
+    public  BranchOffice  getCurrentUser2() {
         return currentUser2;
     }
     
@@ -34,14 +36,22 @@ public class Login extends javax.swing.JFrame {
     }
    
     
+    public static Buy_with_Cash_Used BWCU = new Buy_with_Cash_Used();
     public static Seler selerMet = new Seler();
     public static UserMethods userMet = new UserMethods();
     public static vehiculesMethods vehiculesMet = new vehiculesMethods();   
     
 
+    public static WishBuyer wish= new WishBuyer();
+    public static DebtsBuyer debts= new DebtsBuyer(); 
+    public static PurchasesBuyer purchases= new PurchasesBuyer();        
+    public static RecordBuyer record= new RecordBuyer();
+    public static buyWithBank buyWithBank = new buyWithBank();
+    public static ViewBanks viewBanks = new ViewBanks();
+    public static BankMethods metBank = new BankMethods();
     public static SeeCars SC = new SeeCars();
     //
-    public static  buyerNewOrUsed BNU = new buyerNewOrUsed();
+    public static  MenuBuyer BNU = new MenuBuyer();
     public static buyerNew BN = new buyerNew();
     public static buyerUsed BU = new buyerUsed();
     public static buyerDiscountVehicules BDV = new buyerDiscountVehicules();
@@ -123,8 +133,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Login");
 
         btm_registrar_Compradores_.setText("Registrar Compradores");
@@ -134,8 +144,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 102, 0));
         jLabel4.setText("Opciones");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -145,9 +155,8 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -157,8 +166,9 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(btnIngresar)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtNombre)
-                                .addComponent(txtContra, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                .addComponent(txtContra, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,9 +182,9 @@ public class Login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -189,7 +199,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 29, Short.MAX_VALUE)
+                        .addGap(0, 27, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(27, 27, 27)
                         .addComponent(btm_registrar_Vendedores_)
@@ -234,24 +244,27 @@ public class Login extends javax.swing.JFrame {
         User user=userMet.ReturnObjet(name, password);
         currentUser = user;
 
-        
+   
         
         if(user != null)
         {
-            Login.BNU.jMenuItem1.setText("Nombre: "+user.getName());
-            Login.BNU.jMenuItem2.setText("Id: "+user.getId());
-            Login.BNU.jMenuItem3.setText("Correo: "+user.getEmail());
-            Login.BNU.jMenuItem4.setText("Rol: "+user.getRol());
-            Login.BNU.jMenuItem5.setText("Tipo: "+user.getType());
-            //Login.BNU.jMenuItem7.setText("Dinero: "+nuevo.getCard().getMoney());
+            txtNombre.setText("");
+            txtContra.setText("");
+            
+                Login.BNU.jMenuItem1.setText("Nombre: "+user.getName());
+                Login.BNU.jMenuItem2.setText("Id: "+user.getId());
+                Login.BNU.jMenuItem3.setText("Correo: "+user.getEmail());
+                Login.BNU.jMenuItem4.setText("Rol: "+user.getRol());
+                Login.BNU.jMenuItem5.setText("Tipo: "+user.getType());
             
             if(user.getRol().equals("Persona") && user.getType().equals("Seller"))
-            {
+            {       
                 Login.SAP.setVisible(true);
                 this.dispose();
             }
             if(user.getRol().equals("Agencia") && user.getType().equals("Seller"))
             {
+
                 Login.SAA.print(currentUser);
                 Login.SAA.setVisible(true);
                 this.dispose();
@@ -259,6 +272,7 @@ public class Login extends javax.swing.JFrame {
             }
             if(user.getRol().equals("Sucursal") && user.getType().equals("Seller"))
             {
+                
                 Login.SAE.print();
                 Login.SAE.setVisible(true);
                 this.dispose();
@@ -266,12 +280,34 @@ public class Login extends javax.swing.JFrame {
             // Buyers
             if(user.getRol().equals("Persona") && user.getType().equals("Buyer"))
             {
+                Login.BWCU.persona=(Buyer) user; //paso la info del usuario para comprar 
+                Login.buyWithBank.persona=(Buyer) user;
+                Login.record.persona=(Buyer) user;
+                Login.purchases.persona=(Buyer) user;
+                Login.debts.persona=(Buyer) user;
+                Login.BU.persona=(Buyer) user;
+                Login.BNU.persona=(Buyer) user;
+                Login.wish.persona=(Buyer) user;
+                
                 Login.SAP.print();
                 Login.BNU.setVisible(true);
                 this.dispose();
             }
             if(user.getRol().equals("Sucursal") && user.getType().equals("Buyer"))
             {
+                BranchOffice  user2=userMet.ReturnBrachOffice(name, password);
+                currentUser2 = user2;
+                
+                //Login.BU.persona=(Buyer) user; //paso la info del usuario para comprar 
+                Login.BWCU.sucursal=user2;
+                Login.buyWithBank.sucursal=user2;
+                Login.record.sucursal=user2;
+                Login.purchases.sucursal=user2;
+                Login.debts.sucursal=user2;
+                Login.BU.sucursal=user2;
+                Login.BNU.sucursal=user2;
+                Login.wish.sucursal=user2;
+                
                 Login.BNU.setVisible(true);
                 this.dispose();
             }

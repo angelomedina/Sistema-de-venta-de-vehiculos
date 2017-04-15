@@ -5,7 +5,10 @@
  */
 package Methods;
 
+import Entities.BranchOffice;
+import Entities.Buyer;
 import Entities.CreditCard;
+import Entities.Seler;
 import Entities.User;
 import java.util.ArrayList;
 
@@ -32,11 +35,32 @@ public class UserMethods {
         return false;
     }
     
-     public User ReturnObjet(String nombre, String pass) {
+    public User ReturnObjet(String nombre, String pass) {
         for(User i:userList){
             if(i.getName().equals(nombre)&& i.getPass().equals(pass))
             {
                 return i;
+            }
+        }
+        return null;
+    }
+    
+    public Seler ReturnObjetSeler(String nombre) { // rerurn objet with name
+        for(User i:userList){
+            if(i.getName().equals(nombre))
+            {
+                return (Seler) i;
+            }
+        }
+        return null;
+    }
+     
+     
+    public BranchOffice  ReturnBrachOffice(String nombre, String pass) {
+        for(User i:userList){
+            if(i.getName().equals(nombre)&& i.getPass().equals(pass))
+            {
+                return (BranchOffice) i;
             }
         }
         return null;

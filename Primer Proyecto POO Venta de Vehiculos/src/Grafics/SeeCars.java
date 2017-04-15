@@ -21,6 +21,8 @@ public class SeeCars extends javax.swing.JFrame {
      */
     public SeeCars() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
         car.addColumn("Tipo de vehiculo");
         car.addColumn("Marca");
         car.addColumn("Transmision");

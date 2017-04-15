@@ -15,7 +15,7 @@ public class UsedVehicules extends Vehicule {
     private int _mileage;
     private String _description;
     public UsedVehicules(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition,String description,int mileage, long price) {
-        super(type, brand, incharge, licensePlate, model, color, transmition, price);
+        super(type, brand, incharge, licensePlate, model, color, transmition, price,"Usado");
     this._description = description;
     this._mileage = mileage;
     }

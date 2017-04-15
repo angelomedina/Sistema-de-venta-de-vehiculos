@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Vinicio
@@ -12,6 +14,10 @@ package Entities;
 public class BranchOffice extends ComercialEstablishment {
    
     private CreditCard _card;
+    public ArrayList<BillBuyer > record = new ArrayList<BillBuyer >(); 
+    public ArrayList<Purchases>  purchases = new ArrayList<Purchases>(); 
+    public ArrayList<Debts>  debts = new ArrayList<Debts>(); 
+    public ArrayList<Wishes>      wishes     = new ArrayList<Wishes>(); 
     
     public BranchOffice(String name, int id, String email, String country, String rol, String pass, String type, int _incriptionNumber, String _location, int _telephoneNumber, String _comercialReason,CreditCard _card) {
         super(name, id, email, country, rol, pass, type, _incriptionNumber, _location, _telephoneNumber, _comercialReason);

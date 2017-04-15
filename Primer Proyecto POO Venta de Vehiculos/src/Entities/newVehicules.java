@@ -15,7 +15,7 @@ public class newVehicules extends Vehicule {
     public newVehicules(){}
     
     public newVehicules(String type, String brand, String incharge, int licensePlate, int model, String color, String transmition, long price) {
-        super(type, brand, incharge, licensePlate, model, color, transmition, price );
+        super(type, brand, incharge, licensePlate, model, color, transmition, price,"Nuevo" );
     }
 public void printVehicules()
     {

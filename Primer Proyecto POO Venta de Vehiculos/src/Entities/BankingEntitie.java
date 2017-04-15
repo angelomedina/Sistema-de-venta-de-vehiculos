@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Vinicio
@@ -13,13 +15,25 @@ public class BankingEntitie {
     private String name;
     private int InterestRateUsed;
     private int InterestRateNew;
+    private int yearLastFinancialModel;
 
-    public BankingEntitie(String name, int InterestRateUsed, int InterestRateNew) {
+    public ArrayList<BillBank> Prestamos = new ArrayList<BillBank>(); 
+
+    
+    public BankingEntitie(String name, int InterestRateUsed, int InterestRateNew,int LastFinancialModel) {
         this.name = name;
         this.InterestRateUsed = InterestRateUsed;
         this.InterestRateNew = InterestRateNew;
+        this.yearLastFinancialModel=LastFinancialModel;
     }
 
+    public int getYearLastFinancialModel() {
+        return yearLastFinancialModel;
+    }
+
+    
+    
+    
     public String getName() {
         return name;
     }
